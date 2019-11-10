@@ -1,3 +1,6 @@
+{% load staticfiles %}
+{% load static %}
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -5,10 +8,42 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Graigs_List scrapper</title>
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Graigs_List scraper</title>
 </head>
 <body>
-<h1>Testing to see if this works!</h1>
+<nav>
+    <div class="container nav-wrapper">
+        <a href="/" class="brand-logo">Craigslist scraper</a>
+    </div>
+</nav>
 
+
+<div class="container">
+
+    {% block content %}
+
+    {% endblock content %}
+  
+</div>
+
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Footer Content</h5>
+              <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            </div>
+        </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+          © 2019 Vadim Saroka
+        </div>
+    </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>

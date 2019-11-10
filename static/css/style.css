@@ -1,0 +1,13 @@
+body {
+  color: #666;
+}
+
+.card {
+  height: 400px;
+  overflow: hidden;
+}
+
+.card-image {
+  height: 250px;
+  overflow: hidden;
+}
