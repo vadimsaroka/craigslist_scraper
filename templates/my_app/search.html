@@ -61,10 +61,10 @@
         <h2> {{ search | title }} </h2>
     </div>
 
-    <div class="row">
+    <!-- <div class="row">
         {% for posting in data %}
-            <div class="col s4">
-                <div class="card">
+            <div class="col s12 m6 l3">
+                <div class="card hoverable">
                     <div class="card-image">
                         <a href="{{ posting.1 }}" target="_blank">
                             <img src="{{ posting.3 }}" alt="image">
@@ -74,13 +74,34 @@
                         <p>{{ posting.0 }}</p>
                     </div>
                     <div class="card-action">
-                        <a href="{{ posting.1 }}" target="_blank">View listing: Price {{ posting.2 }}</a>
+                        <a href="{{ posting.1 }}" target="_blank">{{ posting.2 }}</a>
                     </div>
                 </div>
             </div>
         {% endfor %}
-    </div>
+    </div> -->
 
+
+    <div class="row">
+        {% for posting in data %}
+        <div class="col s12 m6 l3">
+        <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="{{ posting.3 }}" alt="image">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4 truncate">{{ posting.0 }}<i class="material-icons right">more_vert</i></span>
+              <a href="{{ posting.1 }}" target="_blank">{{ posting.2 }}</a>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+              <p>{{ posting.0 }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+        
     <ul class="pagination" style="text-align: center">
         {% if rangeFrom <= "1" %}
             

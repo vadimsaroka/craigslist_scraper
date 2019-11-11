@@ -3,11 +3,11 @@ body {
 }
 
 .card {
-  height: 400px;
+  height: 350px;
   overflow: hidden;
 }
 
 .card-image {
-  height: 250px;
+  height: 220px;
   overflow: hidden;
 }
