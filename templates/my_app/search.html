@@ -61,31 +61,10 @@
         <h2> {{ search | title }} </h2>
     </div>
 
-    <!-- <div class="row">
-        {% for posting in data %}
-            <div class="col s12 m6 l3">
-                <div class="card hoverable">
-                    <div class="card-image">
-                        <a href="{{ posting.1 }}" target="_blank">
-                            <img src="{{ posting.3 }}" alt="image">
-                        </a>
-                    </div>
-                    <div class="card-content">
-                        <p>{{ posting.0 }}</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="{{ posting.1 }}" target="_blank">{{ posting.2 }}</a>
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
-    </div> -->
-
-
     <div class="row">
         {% for posting in data %}
         <div class="col s12 m6 l3">
-        <div class="card">
+        <div class="card hoverable">
             <div class="card-image waves-effect waves-block waves-light">
               <img class="activator" src="{{ posting.3 }}" alt="image">
             </div>

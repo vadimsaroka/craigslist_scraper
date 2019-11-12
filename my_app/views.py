@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import requests
 from requests.compat import quote_plus
 
-from . import models
+# from . import models
 
 # Create your views here.
 base_url = "https://sfbay.craigslist.org/search/?query={}&sort=rel&s={}&min_price={}&max_price={}"
@@ -20,14 +20,12 @@ def search(request):
 
     query = request.GET.get("query")
 
-
     new_search = request.POST.get("search") or query or ""
     min_price = request.POST.get('min_price', 0)
     max_price = request.POST.get('max_price')
-    models.Search.objects.create(search=new_search)
+    # models.Search.objects.create(search=new_search)
     url = base_url.format(quote_plus(new_search), s, min_price, max_price)
     response = requests.get(url)
-
 
     soup = BeautifulSoup(response.text, features="html.parser")
 
@@ -43,7 +41,7 @@ def search(request):
     prev_btn = url
     if soup.find(class_="button prev"):
         prev_btn = soup.find(class_="button prev").get("href")
-    
+
     totalcount = ""
     if soup.find(class_="totalcount"):
         totalcount = soup.find(class_="totalcount").text
@@ -55,7 +53,6 @@ def search(request):
     rangeTo = ""
     if soup.find(class_="rangeTo"):
         rangeTo = soup.find(class_="rangeTo").text
-
 
     for post in listings:
         title = post.find(class_="result-title hdrlnk").text
